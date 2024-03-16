@@ -1,4 +1,4 @@
-pub #[derive(Debug)]
+#[derive(Debug)]
 enum TokenKind {
     Number(i64),
     Plus,
@@ -23,7 +23,7 @@ impl TextSpan {
         self { start, end, literal }
     }
 
-    pub fn ;ength(&self) -> usize {
+    pub fn length(&self) -> usize {
         self.end - self.start 
     }
 }
@@ -59,7 +59,7 @@ impl <'a> Lexer<'a> {
                 TextSpan::new(0, 0, eof_char.to_string())
             ));
         }
-        let start = self.current_post;
+        let start = self.current_pos;
         let mut kind = TokenKind::Bad;
         let c = self.current_char();
         if self::is_number_start(&c) {
