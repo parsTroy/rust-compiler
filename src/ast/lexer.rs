@@ -30,7 +30,7 @@ impl TextSpan {
 
 #[derive(Debug)]
 pub struct Token {
-    Kind: TokenKind,
+    kind: TokenKind,
     span: TextSpan,
 }
 
