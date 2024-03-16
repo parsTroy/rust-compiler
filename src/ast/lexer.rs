@@ -84,7 +84,7 @@ impl <'a> Lexer<'a> {
     fn consume(&mut self) -> Option<char> {
         let c = self.current_char();
         self.current_pos += 1;
-        if self.current_pos >= self.input.len() {
+        if self.current_pos > self.input.len() {
             return None;
         }
         Some(c)
